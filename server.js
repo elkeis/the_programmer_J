@@ -14,7 +14,13 @@ const server = new http.Server(async (req, res) => {
     const posts = (await fs.readdir('./posts')).filter(post => post.endsWith('.html'));
     res.write(JSON.stringify(posts, 'null', '\t'))
   } else if (req.url.match(/\/posts\/.*\.html/g)) {
-    res.write(await fs.readFile('.' + req.url));
+    try {
+
+      res.write(await fs.readFile('.' + decodeURIComponent(req.url)));
+    } catch (ex) {
+      console.error(ex);
+      res.write(await fs.readFile('./404.html'));
+    }
   } else if (req.url.match(/\/.*\.js/g)) {
     res.setHeader('Content-Type', 'application/javascript');
     res.write(await fs.readFile('.' + req.url));
