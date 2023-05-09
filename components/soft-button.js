@@ -56,6 +56,10 @@ class SoftButton extends HTMLElement {
         this.pressed = 0;
       }, 0);
     });
+
+    this.addEventListener('touchend', () => {
+      this.dispatchEvent(new Event('soft-click', { bubbles: true }));
+    })
     this.innerHTML = `<button>${this.innerHTML}</button>`;
   }
 }
