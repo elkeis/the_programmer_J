@@ -26,7 +26,11 @@ class Node {
 }
 
 
-function run() {
+function typo() {
+  document.head.innerHTML += '<link rel="stylesheet" href="/typo.css"/>'
+}
+
+function md2html() {
   const md = window.document.querySelector('md');
   const mdContent = md.innerHTML;
 
@@ -65,7 +69,7 @@ function run() {
   md.innerHTML = nodes.filter(n => !!n).map(n => n.toString()).join(' ');
 }
 
-
-run();
+typo();
+md2html();
 
 
