@@ -4,9 +4,9 @@ Description=Blog
 [Service]
 ExecStart=/root/project/blog/server.js
 Restart=always
-User=nobody
+User=root
 # Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
-Group=nogroup
+Group=root
 Environment=PATH=/usr/bin:/usr/local/bin
 Environment=NODE_ENV=production
 WorkingDirectory=/root/project/blog
