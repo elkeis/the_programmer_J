@@ -1,13 +1,15 @@
 #!/usr/bin/node
 const http = require('http');
-const fs = require('fs/promises')
+const fs = require('fs/promises');
+const { exec } = require('child_process');
 
 const server = new http.Server(async (req, res) => {
   console.log(req.url);
   res.setHeader('Content-Type', 'text/html');
   if (req.url === '/') req.url = '/index.html';
-
-  if (req.url.match(/\/index.*/g)) {
+  if (req.url === '/pull') {
+    await exec('git pull');
+  } else if (req.url.match(/\/index.*/g)) {
     res.setHeader('Content-Type', req.url.endsWith('.js') ? 'application/javascript' : (req.url.endsWith('.css') ? 'text/css' : 'text/html'))
     res.write(await fs.readFile('.' + req.url));
   } else if (req.url === '/posts' && req.method === 'GET') {
