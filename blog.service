@@ -2,7 +2,7 @@
 Description=Blog
 
 [Service]
-ExecStart=/root/project/blog/server.js
+ExecStart=/root/project/blog/start.sh
 Restart=always
 User=root
 # Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'

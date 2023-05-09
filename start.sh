@@ -1,1 +1,4 @@
-node server.js & echo $! > server.pid
+#!/bin/bash
+. ~/.nvm/nvm.sh
+
+nvm install && nvm use && node server.js
