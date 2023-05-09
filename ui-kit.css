@@ -1,0 +1,47 @@
+:root {
+  --c-bg-main: white;
+  --c-bg-sec: rgb(115, 106, 100);
+  --c-bg-thi: rgb(97, 104, 109);
+  --c-fg-main: black;
+  --c-fg-sec: rgb(123, 169, 191);
+  --c-fg-thi: rgb(241, 117, 76);
+
+  color: var(--c-fg-main);
+  background-color: var(--c-bg-main);
+}
+
+.highlight {
+  color: var(--c-fg-sec);
+  background-color: var(--c-bg-sec);
+}
+
+.highlight-strong {
+  color: var(--c-fg-thi);
+  background-color: var(--c-bg-thi);
+}
+
+.shelf {
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+}
+
+.stack {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+}
+
+button {
+  color: unset;
+  background-color: unset;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.189);
+  border-radius: 3px;
+
+  transition: transform 0.5s;
+}
+
+button:active {
+  transform: translate3d(2px, 2px, 0);
+}
