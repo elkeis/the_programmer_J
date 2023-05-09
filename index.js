@@ -5,14 +5,17 @@ async function main() {
 
   const posts = await (await fetch('/posts')).json();
 
-  menu.innerHTML = posts.reduce((result, post) => `${result} <button>${post.replace('.html', '')}</button>`, '');
+  menu.innerHTML = posts.reduce((result, post) => `${result} <soft-button timeToPress="500" data="${post}">${post.replace('.html', '')}</soft-button>`, '');
 
-  menu.addEventListener('click', (event) => {
-    console.log(event.target);
-    if (event.target.tagName === 'BUTTON') {
-      iframe.src = `./posts/${event.target.innerHTML}.html`
-    }
-  })
+  const clickTracker = {
+    target: null,
+    mouseDownTimestamp: 0,
+    mouseUpTimestamp: 0,
+  }
+
+  menu.addEventListener('soft-click', (event) => {
+    iframe.src = `./posts/${event.target.getAttribute('data')}`;
+  });
 }
 
-main();
+window.onload = main;
