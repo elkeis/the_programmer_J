@@ -5,7 +5,7 @@
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-@media screen and (max-width: 624px) {
+@media screen and (max-width: 800px) {
   :root {
     font-size: 24px;
   }
