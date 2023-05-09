@@ -4,3 +4,9 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+
+@media screen and (max-width: 624px) {
+  :root {
+    font-size: 24px;
+  }
+}

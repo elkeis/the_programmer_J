@@ -33,6 +33,7 @@
 }
 
 button {
+  font-size: 1em;
   color: unset;
   background-color: unset;
   border: none;
@@ -40,6 +41,7 @@ button {
   border-radius: 3px;
 
   transition: transform 0.5s;
+  min-height: 1em;
 }
 
 button:active {
