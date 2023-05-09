@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/root/.nvm/versions/node/v16.15.1/bin node
 const http = require('http');
 const fs = require('fs/promises')
 
