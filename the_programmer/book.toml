@@ -1,0 +1,6 @@
+[book]
+authors = ["elkeis"]
+language = "en"
+multilingual = false
+src = "src"
+title = "the programmer journal"
