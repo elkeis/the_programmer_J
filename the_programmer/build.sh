@@ -1,1 +1,1 @@
-mdbook build -d ../build
+mdbook build -d ../docs
